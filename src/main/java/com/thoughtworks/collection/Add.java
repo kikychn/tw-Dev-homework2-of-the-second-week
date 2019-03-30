@@ -117,6 +117,9 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> evenList = arrayList.stream().filter(number -> isEven(number)).sorted().collect(Collectors.toList());
+        List<Integer> oddList = arrayList.stream().filter(number -> !isEven(number)).sorted((x, y) -> y - x).collect(Collectors.toList());
+        evenList.addAll(oddList);
+        return evenList;
     }
 }
