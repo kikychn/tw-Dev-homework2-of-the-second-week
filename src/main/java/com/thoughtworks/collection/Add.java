@@ -34,10 +34,14 @@ public class Add {
         return i % 2 == 0;
     }
 
+    private int getNumberModify(Integer number, int multiple, int addition) {
+        return number * multiple + addition;
+    }
+
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
         int result = 0;
         for (Integer number : arrayList) {
-            result += number * 3 + 2;
+            result += getNumberModify(number, 3, 2);
         }
         return result;
     }
@@ -46,10 +50,9 @@ public class Add {
         List<Integer> result = new ArrayList<>();
         for (Integer number : arrayList) {
             if (!isEven(number)) {
-                result.add(number * 3 + 2);
-            } else {
-                result.add(number);
+                number = getNumberModify(number, 3, 2);
             }
+            result.add(number);
         }
         return result;
     }
