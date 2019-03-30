@@ -103,11 +103,17 @@ public class Add {
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        boolean result = false;
+        List<Integer> evenList = arrayList.stream().filter(number -> isEven(number)).collect(Collectors.toList());
+        if (evenList.contains(specialElment)) {
+            result = true;
+        }
+        return result;
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result = arrayList.stream().filter(number -> isEven(number)).distinct().collect(Collectors.toList());
+        return result;
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
