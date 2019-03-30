@@ -65,7 +65,15 @@ public class Add {
             }
         }
         return result;
+    }
 
+    public List<Integer> getProcessedList(List<Integer> arrayList) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i < arrayList.size(); i++) {
+            int sum = arrayList.get(i - 1) + arrayList.get(i);
+            result.add(getNumberModify(sum, 3, 0));
+        }
+        return result;
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
@@ -85,10 +93,6 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
-    }
-
-    public List<Integer> getProcessedList(List<Integer> arrayList) {
         throw new NotImplementedException();
     }
 }
