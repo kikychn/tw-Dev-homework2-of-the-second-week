@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,6 +32,12 @@ public class Filter {
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (Integer number : firstList) {
+            if (secondList.contains(number)) {
+                result.add(number);
+            }
+        }
+        return result;
     }
 }
