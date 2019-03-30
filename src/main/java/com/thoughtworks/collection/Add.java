@@ -91,7 +91,15 @@ public class Add {
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        double result;
+        List<Integer> evenList = arrayList.stream().filter(number -> isEven(number)).collect(Collectors.toList());
+        int length = evenList.size();
+        int sum = 0;
+        for (Integer aEven : evenList) {
+            sum += aEven;
+        }
+        result = sum / length;
+        return result;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
