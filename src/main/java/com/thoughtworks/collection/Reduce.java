@@ -33,7 +33,7 @@ public class Reduce {
         double result;
         int length = arrayList.size();
         int mid = length / 2;
-        if (length % 2 == 0) {
+        if (isEven(length)) {
             result = (double) (arrayList.get(mid) + arrayList.get(mid - 1)) / 2;
         } else {
             result = (double) arrayList.get(mid);
@@ -43,16 +43,20 @@ public class Reduce {
 
     public int getFirstEven() {
         for (Integer number : arrayList) {
-            if (number % 2 == 0) {
+            if (isEven(number)) {
                 return number;
             }
         }
         return -1;
     }
 
+    private boolean isEven(Integer number) {
+        return number % 2 == 0;
+    }
+
     public int getIndexOfFirstEven() {
         for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i) % 2 == 0) {
+            if (isEven(arrayList.get(i))) {
                 return i;
             }
         }
