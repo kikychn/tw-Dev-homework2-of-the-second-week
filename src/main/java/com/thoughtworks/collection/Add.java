@@ -103,7 +103,12 @@ public class Add {
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        boolean result = false;
+        List<Integer> evenList = arrayList.stream().filter(number -> isEven(number)).collect(Collectors.toList());
+        if (evenList.contains(specialElment)) {
+            result = true;
+        }
+        return result;
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
