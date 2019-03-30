@@ -42,7 +42,12 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        for (Integer number : arrayList) {
+            if (number % 2 == 0) {
+                return number;
+            }
+        }
+        return -1;
     }
 
     public int getIndexOfFirstEven() {
