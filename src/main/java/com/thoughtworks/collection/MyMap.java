@@ -24,7 +24,9 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        List<String> result = new ArrayList<>();
+        array.forEach(index -> result.add(letters[index - 1]));
+        return result;
     }
 
     public List<String> mapLetters() {
