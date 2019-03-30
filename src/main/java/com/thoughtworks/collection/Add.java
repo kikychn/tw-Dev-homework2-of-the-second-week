@@ -19,7 +19,17 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int result = 0;
+        int start = Math.min(leftBorder, rightBorder);
+        int end = Math.max(leftBorder, rightBorder);
+        for (int i = start; i <= end; i++) {
+            if (i % 2 != 0) {
+                result += i;
+                i++;
+            }
+        }
+        return result;
+
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
