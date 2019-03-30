@@ -30,7 +30,22 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        List<String> result = new ArrayList<>();
+        int letterCount = letters.length;
+        for (Integer index : array) {
+            if (index <= letterCount) {
+                result.add(letters[index - 1]);
+            } else {
+                int loop = index / letterCount;
+                int remainder = index % letterCount;
+                if (remainder == 0) {
+                    result.add(letters[loop - 2] + letters[letterCount - 1]);
+                } else {
+                    result.add(letters[loop - 1] + letters[remainder - 1]);
+                }
+            }
+        }
+        return result;
     }
 
     public List<Integer> sortFromBig() {
