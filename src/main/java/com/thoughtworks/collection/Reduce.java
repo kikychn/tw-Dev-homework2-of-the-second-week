@@ -41,17 +41,12 @@ public class Reduce {
         return result;
     }
 
-    public int getFirstEven() {
-        for (Integer number : arrayList) {
-            if (isEven(number)) {
-                return number;
-            }
-        }
-        return -1;
-    }
-
     private boolean isEven(Integer number) {
         return number % 2 == 0;
+    }
+
+    public int getFirstEven() {
+        return arrayList.get(getIndexOfFirstEven());
     }
 
     public int getIndexOfFirstEven() {
@@ -63,22 +58,8 @@ public class Reduce {
         return -1;
     }
 
-    public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
-    }
-
-    public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
-    }
-
     public int getLastOdd() {
-        int result = -1;
-        for (Integer number : arrayList) {
-            if (!isEven(number)) {
-                result = number;
-            }
-        }
-        return result;
+        return arrayList.get(getIndexOfLastOdd());
     }
 
     public int getIndexOfLastOdd() {
@@ -89,5 +70,13 @@ public class Reduce {
             }
         }
         return result;
+    }
+
+    public boolean isEqual(List<Integer> arrayList) {
+        throw new NotImplementedException();
+    }
+
+    public Double getMedianInLinkList(SingleLink singleLink) {
+        throw new NotImplementedException();
     }
 }
