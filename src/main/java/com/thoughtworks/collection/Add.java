@@ -6,16 +6,27 @@ import java.util.List;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
+        return getSumOfEvenOrOdd(leftBorder, rightBorder, true);
+    }
+
+    private int getSumOfEvenOrOdd(int leftBorder, int rightBorder, boolean isAEven) {
         int result = 0;
         int start = Math.min(leftBorder, rightBorder);
         int end = Math.max(leftBorder, rightBorder);
         for (int i = start; i <= end; i++) {
-            if (i % 2 == 0) {
+            if (isAEven && isEven(i)) {
+                result += i;
+                i++;
+            } else if (!isAEven && !isEven(i)) {
                 result += i;
                 i++;
             }
         }
         return result;
+    }
+
+    private boolean isEven(int i) {
+        return i % 2 == 0;
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
@@ -29,7 +40,6 @@ public class Add {
             }
         }
         return result;
-
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
