@@ -72,7 +72,13 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        int result = -1;
+        for (Integer number : arrayList) {
+            if (!isEven(number)) {
+                result = number;
+            }
+        }
+        return result;
     }
 
     public int getIndexOfLastOdd() {
