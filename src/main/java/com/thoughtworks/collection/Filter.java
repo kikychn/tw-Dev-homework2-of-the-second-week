@@ -15,16 +15,16 @@ public class Filter {
         this.array = array;
     }
 
-    private boolean isEven(int i) {
-        return i % 2 == 0;
+    private boolean isFilterCondition(int i, int dev) {
+        return i % dev == 0;
     }
 
     public List<Integer> filterEven() {
-        return array.stream().filter(number -> isEven(number)).collect(Collectors.toList());
+        return array.stream().filter(number -> isFilterCondition(number, 2)).collect(Collectors.toList());
     }
 
     public List<Integer> filterMultipleOfThree() {
-        return array.stream().filter(number -> number % 3 == 0).collect(Collectors.toList());
+        return array.stream().filter(number -> isFilterCondition(number, 3)).collect(Collectors.toList());
     }
 
     public List<Integer> getDifferentElements() {
