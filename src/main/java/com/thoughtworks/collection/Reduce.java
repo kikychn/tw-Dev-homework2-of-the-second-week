@@ -30,7 +30,15 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        double result;
+        int length = arrayList.size();
+        int mid = length / 2;
+        if (length % 2 == 0) {
+            result = (double) (arrayList.get(mid) + arrayList.get(mid - 1)) / 2;
+        } else {
+            result = (double) arrayList.get(mid);
+        }
+        return result;
     }
 
     public int getFirstEven() {
