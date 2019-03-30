@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,7 +36,8 @@ public class CollectionOperator {
     }
 
     public List<Integer> popEvenElments(int[] array) {
-        throw new NotImplementedException();
+        List<Integer> result = Arrays.stream(array).boxed().collect(Collectors.toList());
+        return result.stream().filter(number -> isEven(number)).collect(Collectors.toList());
     }
 
     public int popLastElment(int[] array) {
