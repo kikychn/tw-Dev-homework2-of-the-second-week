@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
@@ -77,7 +78,16 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        double result;
+        List<Integer> evenList = arrayList.stream().filter(number -> isEven(number)).collect(Collectors.toList());
+        int length = evenList.size();
+        int mid = length / 2;
+        if (isEven(length)) {
+            result = (evenList.get(mid - 1) + evenList.get(mid)) / 2;
+        } else {
+            result = evenList.get(mid);
+        }
+        return result;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
