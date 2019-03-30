@@ -8,6 +8,10 @@ import java.util.stream.Collectors;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
+        return getNumberList(left, right);
+    }
+
+    private List<Integer> getNumberList(int left, int right) {
         List<Integer> result = new ArrayList<>();
         if (left <= right) {
             for (int i = left; i <= right; i++) {
@@ -22,16 +26,7 @@ public class CollectionOperator {
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        List<Integer> result = new ArrayList<>();
-        if (left <= right) {
-            for (int i = left; i <= right; i++) {
-                result.add(i);
-            }
-        } else {
-            for (int i = left; i >= right; i--) {
-                result.add(i);
-            }
-        }
+        List<Integer> result = getNumberList(left, right);
         return result.stream().filter(number -> isEven(number)).collect(Collectors.toList());
     }
 
