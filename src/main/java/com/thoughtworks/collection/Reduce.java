@@ -51,7 +51,12 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i) % 2 == 0) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public boolean isEqual(List<Integer> arrayList) {
