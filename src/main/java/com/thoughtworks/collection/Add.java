@@ -30,16 +30,7 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        int result = 0;
-        int start = Math.min(leftBorder, rightBorder);
-        int end = Math.max(leftBorder, rightBorder);
-        for (int i = start; i <= end; i++) {
-            if (i % 2 != 0) {
-                result += i;
-                i++;
-            }
-        }
-        return result;
+        return getSumOfEvenOrOdd(leftBorder, rightBorder, false);
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
